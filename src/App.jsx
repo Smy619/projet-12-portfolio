@@ -25,6 +25,7 @@ function App() {
     <HashRouter>
       <Preloader />
       <Header />
+       <ScrollTop />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,8 +39,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      <ScrollTop />
-    </HashRouter>
+     </HashRouter>
   );
 }
 

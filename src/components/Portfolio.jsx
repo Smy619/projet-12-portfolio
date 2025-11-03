@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 import Isotope from "isotope-layout";
@@ -34,6 +35,7 @@ function Projects() {
   useEffect(() => {
     if (!portfolioData.length) return;
     setTimeout(() => {
+      // eslint-disable-next-line no-undef
       if (document.activeElement && document.activeElement.blur) {
         document.activeElement.blur();
       }
@@ -190,14 +192,14 @@ function Projects() {
                     </a>
 
                     {/* Details Link */}
-                    <a
-                      href={`/portfolio-details/${item.id}`}
+                    <Link
+                      to={`/portfolio-details/${item.id}`}
                       className="details-link"
                       title="More Details"
                       rel="noopener noreferrer"
                     >
                       <i className="bi bi-link-45deg"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))
