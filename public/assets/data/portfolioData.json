@@ -1,132 +1,132 @@
 [
   {
     "id": 1,
-    "title": "Nina Carducci – SEO Optimization",
+    "title": "Portfolio-architecte-sophie-bluel – Build a Dynamic Web Page with JavaScript",
     "category": "Formation",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+    "image": "/assets/img/portfolio/P6_4.webp",
     "images": [
-        "/assets/img/portfolio/app-1.jpg",
-        "/assets/img/portfolio/product-1.jpg",
-        "/assets/img/portfolio/books-1.jpg",
-        "/assets/img/portfolio/branding-1.jpg",
-        "/assets/img/testimonials/testimonials-2.jpg"
+      "/assets/img/portfolio/P6_1.webp",
+      "/assets/img/portfolio/P6_2.webp",
+      "/assets/img/portfolio/P6_3.webp",
+      "/assets/img/portfolio/P6_5.webp"
     ],
-    "description": "Website optimized for SEO, accessibility, and performance using Lighthouse, WAVE, and structured data.",
-    "tech": ["HTML", "CSS", "SEO", "Lighthouse"],
+    "description": "Development of an interactive architecture portfolio website using dynamic filters, DOM manipulation, and event handling in vanilla JavaScript.",
+    "tech": ["HTML", "CSS", "JavaScript"],
     "status": "Completed",
-    "year": 2024,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "year": 2025,
+    "url": "https://github.com/Smy619/Portfolio-architecte-sophie-bluel",
+    "presentation": "The goal was to turn a static mockup into a dynamic, interactive website for an architect. I strengthened my skills in DOM manipulation, event handling, and API integration using vanilla JavaScript. Future improvements could include adding a lightweight backend for data persistence and better error management."
   },
   {
     "id": 2,
-    "title": "ArgentBank – React Banking App",
+    "title": "Kasa – Build a Web App with React and React Router",
     "category": "Formation",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+    "image": "/assets/img/portfolio/P7_1.webp",
     "images": [
-        "/assets/img/portfolio/app-1.jpg",
-        "/assets/img/portfolio/product-1.jpg",
-        "/assets/img/portfolio/books-1.jpg",
-        "/assets/img/portfolio/branding-1.jpg",
-        "/assets/img/testimonials/testimonials-2.jpg"
+      "/assets/img/portfolio/P7_2.webp",
+      "/assets/img/portfolio/P7_3.webp"
     ],
-    "description": "Full-stack banking web app with user authentication, transactions, and Redux state management.",
-    "tech": ["React", "Redux", "Node.js", "MongoDB"],
+    "description": "Full redesign of a property rental website as a React single-page application with reusable components and dynamic routing.",
+    "tech": ["React", "React Router", "Vite", "SCSS"],
     "status": "Completed",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/web-Kasa",
+    "presentation": "The objective was to rebuild a real estate website as a single-page application using React. I developed strong skills in creating reusable components, managing dynamic routes, and organizing code with Vite and SCSS. Future improvements could focus on accessibility, unit testing, and performance optimization."
   },
   {
     "id": 3,
-    "title": "Portfolio – Projet 12",
+    "title": "ArgentBank – React & Redux Banking Application",
     "category": "Formation",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+    "image": "/assets/img/masonry-portfolio/P10_1.webp",
     "images": [
-        "/assets/img/portfolio/app-1.jpg",
-        "/assets/img/portfolio/product-1.jpg",
-        "/assets/img/portfolio/books-1.jpg",
-        "/assets/img/portfolio/branding-1.jpg",
-        "/assets/img/testimonials/testimonials-2.jpg"
+      "/assets/img/portfolio/P10_2.webp",
+      "/assets/img/portfolio/P10_3.webp",
+      "/assets/img/portfolio/P10_4.webp",
+      "/assets/img/portfolio/P10_5.webp"
     ],
-    "description": "Modern portfolio website built with React + Vite, including animations, routing, and responsive design.",
-    "tech": ["React", "Vite", "AOS", "SCSS"],
-    "status": "In Progress",
+    "description": "Complete banking web app with user authentication, transaction management, and state handling via Redux.",
+    "tech": ["React", "Redux", "Node.js", "MongoDB"],
+    "status": "Completed",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/ArgentBank",
+    "presentation": "This project involved building a full-featured banking application with authentication and user profile management. I deepened my knowledge of Redux state management and secure API communication with Node.js and MongoDB. Improvements could include enhanced JWT security, end-to-end testing, and richer Swagger documentation."
   },
   {
     "id": 4,
     "title": "MonResto WordPress Theme",
     "category": "Personal",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
-    "description": "Commercial WordPress restaurant theme with WooCommerce and custom animations.",
+    "image": "/assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
+    "description": "Commercial WordPress restaurant theme with WooCommerce integration and custom front-end animations.",
     "tech": ["WordPress", "SCSS", "JavaScript"],
     "status": "Completed",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/MonResto-WordPress-Theme",
+    "presentation": "The goal was to design a commercial WordPress theme for restaurants, featuring modern animations and WooCommerce integration. I improved my front-end skills in SCSS, JavaScript, and custom WordPress theme development. Future enhancements include creating an admin settings panel and optimizing SEO performance."
   },
   {
     "id": 5,
     "title": "AI Job Hunter",
     "category": "Personal",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-5.jpg",
+    "image": "/assets/img/masonry-portfolio/masonry-portfolio-5.jpg",
     "images": [
-        "/assets/img/portfolio/app-1.jpg",
-        "/assets/img/portfolio/product-1.jpg",
-        "/assets/img/portfolio/books-1.jpg",
-        "/assets/img/portfolio/branding-1.jpg",
-        "/assets/img/testimonials/testimonials-2.jpg"
+      "/assets/img/portfolio/app-1.jpg",
+      "/assets/img/portfolio/product-1.jpg",
+      "/assets/img/portfolio/books-1.jpg",
+      "/assets/img/portfolio/branding-1.jpg"
     ],
-    "description": "AI-powered tool that automatically sends tailored CVs to remote job offers.",
+    "description": "AI-powered automation tool that generates and sends customized job applications to remote offers.",
     "tech": ["React", "OpenAI API", "Automation"],
     "status": "In Progress",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/AI-Job-Hunter",
+    "presentation": "This project aims to automate the job-hunting process by generating and sending tailored applications using artificial intelligence. I’m developing skills in automation, OpenAI API integration, and React interface design. Next improvements include adding an application tracking dashboard and implementing data security features."
   },
   {
     "id": 6,
     "title": "AI Theme2WP",
     "category": "Personal",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-6.jpg",
-    "description": "Tool that converts static HTML templates into WordPress themes using AI assistance.",
+    "image": "/assets/img/masonry-portfolio/masonry-portfolio-6.jpg",
+    "description": "Tool that converts static HTML templates into dynamic WordPress themes using AI assistance.",
     "tech": ["Node.js", "React", "OpenAI API"],
     "status": "In Progress",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/AI-Theme2WP",
+    "presentation": "The goal is to build an AI-assisted tool capable of converting static HTML templates into WordPress themes automatically. This project combines my skills in Node.js, React, and OpenAI API integration for web development automation. Future improvements focus on better structure compatibility and a more intuitive user interface."
   },
   {
     "id": 7,
     "title": "AI Tarot Project",
     "category": "Personal",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-7.jpg",
+    "image": "/assets/img/masonry-portfolio/masonry-portfolio-7.jpg",
     "images": [
-        "/assets/img/portfolio/app-1.jpg",
-        "/assets/img/portfolio/product-1.jpg",
-        "/assets/img/portfolio/books-1.jpg",
-        "/assets/img/portfolio/branding-1.jpg",
-        "/assets/img/testimonials/testimonials-2.jpg"
+      "/assets/img/portfolio/app-1.jpg",
+      "/assets/img/portfolio/product-1.jpg",
+      "/assets/img/portfolio/books-1.jpg",
+      "/assets/img/portfolio/branding-1.jpg"
     ],
-    "description": "Interactive Tarot reading web app powered by AI, combining psychology and symbolic storytelling.",
-    "tech": ["React", "Node.js", "AI API"],
+    "description": "Interactive AI-powered tarot reading web app blending psychology and symbolic storytelling.",
+    "tech": ["React", "Node.js", "OpenAI API"],
     "status": "In Progress",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/AI-Tarot",
+    "presentation": "This project combines tarot symbolism and psychological insights through AI to generate interactive readings. I’m improving my skills in conversational logic, front-end development with React, and AI prompt management. Future updates will focus on customizable readings and adding backend storage for user sessions."
   },
   {
     "id": 8,
     "title": "AI Email Assistant",
     "category": "Concept",
-    "image": "assets/img/masonry-portfolio/masonry-portfolio-8.jpg",
+    "image": "/assets/img/masonry-portfolio/masonry-portfolio-8.jpg",
     "images": [
-        "/assets/img/portfolio/app-1.jpg",
-        "/assets/img/portfolio/product-1.jpg",
-        "/assets/img/portfolio/books-1.jpg",
-        "/assets/img/portfolio/branding-1.jpg",
-        "/assets/img/testimonials/testimonials-2.jpg"
+      "/assets/img/portfolio/app-1.jpg",
+      "/assets/img/portfolio/product-1.jpg",
+      "/assets/img/portfolio/books-1.jpg",
+      "/assets/img/portfolio/branding-1.jpg"
     ],
-    "description": "Smart email management assistant that reads, summarizes, and replies automatically using AI.",
-    "tech": ["Python", "OpenAI", "IMAP/SMTP"],
-    "status": "Concept Stage",
+    "description": "AI-based assistant that reads, summarizes, and writes emails automatically.",
+    "tech": ["Python", "OpenAI API", "IMAP/SMTP"],
+    "status": "Concept",
     "year": 2025,
-    "url": "https://smy619.github.io/Nina-Carducci/"
+    "url": "https://github.com/Smy619/AI-Email-Assistant",
+    "presentation": "This concept explores building an assistant capable of reading, summarizing, and writing emails automatically using AI. It leverages skills in Python, IMAP/SMTP protocols, and natural language processing. Future improvements include developing a web interface and integrating personalized user learning."
   }
 ]

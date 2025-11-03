@@ -35,13 +35,13 @@ function Projects() {
   useEffect(() => {
     if (!portfolioData.length) return;
     setTimeout(() => {
-      // eslint-disable-next-line no-undef
+   
       if (document.activeElement && document.activeElement.blur) {
         document.activeElement.blur();
       }
     }, 100);
 
-    // 初始化 GLightbox
+    
     const lightbox = GLightbox({
       selector: ".glightbox",
       touchNavigation: true,

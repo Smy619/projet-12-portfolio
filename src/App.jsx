@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Preloader from "./components/Preloader";
 import Header from "./components/Header";
 import CV from "./pages/CV";
-
+import PortfolioDetails from "./pages/PortfolioDetails"
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import UnderConstruction from "./pages/UnderConstruction";
@@ -33,7 +33,7 @@ function App() {
           <Route path="/studio-Details" element={<UnderConstruction />} />
           <Route
             path="/portfolio-details/:id"
-            element={<UnderConstruction />}
+            element={<PortfolioDetails />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
