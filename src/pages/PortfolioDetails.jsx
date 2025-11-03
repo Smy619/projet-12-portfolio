@@ -88,7 +88,7 @@ function PortfolioDetails() {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                <li className="current">{project.title}</li>
+                <li className="current">Portfolio Details</li>
               </ol>
             </nav>
             <h1>{project.title}</h1>

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Portfolio-architecte-sophie-bluel – Build a Dynamic Web Page with JavaScript",
+    "title": "Portfolio-architecte-sophie-bluel",
     "category": "Formation",
     "image": "/assets/img/portfolio/P6_4.webp",
     "images": [
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "title": "Kasa – Build a Web App with React and React Router",
+    "title": "Kasa",
     "category": "Formation",
     "image": "/assets/img/portfolio/P7_1.webp",
     "images": [
@@ -35,7 +35,7 @@
   },
   {
     "id": 3,
-    "title": "ArgentBank – React & Redux Banking Application",
+    "title": "ArgentBank",
     "category": "Formation",
     "image": "/assets/img/portfolio/P10_1.webp",
     "images": [
