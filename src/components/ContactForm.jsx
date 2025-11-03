@@ -40,8 +40,7 @@ function ContactForm() {
     <form
       onSubmit={handleSubmit}
       className="contact-form"
-      data-aos="fade-up"
-      data-aos-delay="200"
+     
     >
       <div className="row gy-4">
         <div className="col-md-6">

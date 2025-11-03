@@ -55,7 +55,11 @@ section,
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 30px 0;
-  overflow: clip;
+  overflow: visible !important;
+   z-index: 10 !important;
+  position: relative !important;
+  pointer-events: auto !important;
+ 
 }
 
 /* ----------------------------

@@ -5,12 +5,15 @@
    Description: Status message styles for loading, error, and success states.
    ========================================================= */
 
-@use './variables';
+@use "./variables";
 
 /* ----------------------------
    Contact Form (React version)
 ---------------------------- */
 .contact-form {
+  position: relative;
+  z-index: 5;
+
   // -------- Base Message Styles --------
   &__loading,
   &__error-message,

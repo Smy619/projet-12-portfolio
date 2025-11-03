@@ -29,6 +29,7 @@ function StudioDetails() {
   if (loading) return <p className="text-center">Loading services...</p>;
 
   return (
+ 
     <section id="studio-details" className="studio-details section">
       <div className="container">
         <div className="page-title" data-aos="fade">
