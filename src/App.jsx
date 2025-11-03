@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/Home";
 import Preloader from "./components/Preloader";
@@ -22,7 +22,7 @@ function App() {
     });
   }, []);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Preloader />
       <Header />
       <main className="main">
@@ -30,13 +30,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cv" element={<CV />} />
           <Route path="/studio-Details" element={<UnderConstruction />} />
-          <Route path="/portfolio-details/:id" element={<UnderConstruction/>} />
+          <Route
+            path="/portfolio-details/:id"
+            element={<UnderConstruction />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
       <ScrollTop />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
