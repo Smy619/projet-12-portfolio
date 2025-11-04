@@ -55,12 +55,16 @@
     "id": 4,
     "title": "MonResto WordPress Theme",
     "category": "Personal",
-    "image": "/assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
+    "image": "/assets/img/portfolio/monresto_1.webp",
+     "images": [
+      "/assets/img/portfolio/monresto_2.webp",
+      "/assets/img/portfolio/monresto_3.webp"
+    ],
     "description": "Commercial WordPress restaurant theme with WooCommerce integration and custom front-end animations.",
     "tech": ["WordPress", "SCSS", "JavaScript"],
     "status": "Completed",
     "year": 2025,
-    "url": "https://github.com/Smy619/MonResto-WordPress-Theme",
+    "url": "https://github.com/Smy619/yuzuresto",
     "presentation": "The goal was to design a commercial WordPress theme for restaurants, featuring modern animations and WooCommerce integration. I improved my front-end skills in SCSS, JavaScript, and custom WordPress theme development. Future enhancements include creating an admin settings panel and optimizing SEO performance."
   },
   {

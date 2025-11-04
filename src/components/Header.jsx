@@ -53,7 +53,7 @@ function Header() {
   // ---- Other pages (separate routes) ----
   const otherPages = [
     { path: "/cv", label: "CV", icon: "bi-file-earmark-text" },
-    { path: "/studio-details", label: "Studio-details", icon: "bi-laptop" },
+    { path: "/studio-details", label: "UnderConstruction", icon: "bi-laptop" },
   ];
 
   // ---- Smooth scroll to target section ----
