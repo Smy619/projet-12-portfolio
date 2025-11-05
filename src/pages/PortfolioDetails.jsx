@@ -54,28 +54,28 @@ function PortfolioDetails() {
     }
   }, [project]);
   //  Add loading screen before rendering project details
-    if (loading) {
-      return (
-        <section className="portfolio-details section">
-          <div className="container text-center py-5">
-            <h2>Loading project details...</h2>
-          </div>
-        </section>
-      );
-    }
+  if (loading) {
+    return (
+      <section className="portfolio-details section">
+        <div className="container text-center py-5">
+          <h2>Loading project details...</h2>
+        </div>
+      </section>
+    );
+  }
 
-    if (!project) {
-      return (
-        <section className="portfolio-details section">
-          <div className="container text-center py-5">
-            <h2>Project not found</h2>
-            <Link to="/" className="btn btn-primary mt-3">
-              Back to Home
-            </Link>
-          </div>
-        </section>
-      );
-    }
+  if (!project) {
+    return (
+      <section className="portfolio-details section">
+        <div className="container text-center py-5">
+          <h2>Project not found</h2>
+          <Link to="/" className="btn btn-primary mt-3">
+            Back to Home
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="portfolio-details" className="portfolio-details section">
@@ -131,15 +131,52 @@ function PortfolioDetails() {
           {/* Left Column */}
           <div className="col-lg-8" data-aos="fade-up">
             <div className="portfolio-description">
+              {/* === Project Title === */}
               <h2>{project.title}</h2>
+
+              {/* === Short Description === */}
               <p>{project.description}</p>
 
-              <h4>Technologies Used:</h4>
-              <ul className="tech-list">
-                {project.tech.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
+              {/* === Full Narrative (Context, Objectives, Results...) === */}
+              {(project.presentation ||
+                project.objective ||
+                project.skills ||
+                project.improvements) && (
+                <div className="project-presentation" data-aos="fade-up">
+                  <h4>Project Overview</h4>
+                  {project.presentation && <p>{project.presentation}</p>}
+
+                  {project.objective && (
+                    <p>
+                      <strong>🎯 Objective:</strong> {project.objective}
+                    </p>
+                  )}
+
+                  {project.skills && (
+                    <p>
+                      <strong>💡 Skills Developed:</strong> {project.skills}
+                    </p>
+                  )}
+
+                  {project.improvements && (
+                    <p>
+                      <strong>🔧 Improvements:</strong> {project.improvements}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {/* === Technologies Used === */}
+              {project.tech && project.tech.length > 0 && (
+                <>
+                  <h4>Technologies Used</h4>
+                  <ul className="tech-list">
+                    {project.tech.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </div>
           {/* Right Column */}
@@ -187,7 +224,6 @@ function PortfolioDetails() {
           </div>
         </div>
       </div>
-    
     </section>
   );
 }

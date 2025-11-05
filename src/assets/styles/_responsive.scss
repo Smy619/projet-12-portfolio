@@ -113,6 +113,33 @@
       }
     }
   }
+  .portfolio-details .portfolio-description {
+    h2 {
+      font-size: 22px;
+    }
+
+    .project-presentation {
+      padding: 1.2rem;
+    }
+
+    .tech-list li {
+      font-size: 0.85rem;
+      padding: 0.35rem 0.8rem;
+    }
+  }
+
+  .portfolio-details .portfolio-info {
+    margin-top: 40px;
+    text-align: center;
+
+    ul {
+      align-items: center;
+    }
+
+    .btn-visit {
+      margin: 0 auto;
+    }
+  }
 }
 
 /* Tablets & small screens (max-width: 768px) */
