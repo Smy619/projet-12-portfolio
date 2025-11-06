@@ -137,9 +137,13 @@ function Projects() {
               { label: "Personal", filter: ".filter-personal" },
               { label: "Concept", filter: ".filter-concept" },
             ].map(({ label, filter }) => (
-              <li key={filter}>
+              <li key={filter} role="presentation">
                 <button
                   type="button"
+                  role="tab"
+                  id={`tab-${filter.replace(".", "")}`}
+                  aria-controls={`panel-${filter.replace(".", "")}`}
+                  aria-selected={filter === "*"}
                   data-filter={filter}
                   className={`filter-btn ${
                     filter === "*" ? "filter-selected" : ""

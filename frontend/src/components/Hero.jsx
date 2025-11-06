@@ -36,7 +36,7 @@ function Hero() {
      
   return (
     <section id="hero" className="hero" aria-label="Introduction section">
-       <img src={heroImg} alt="Background" data-aos="fade-in" loading="lazy"/>
+       <img src={heroImg} alt="" data-aos="fade-in" loading="lazy" aria-hidden="true" />
 
        <div className="container" data-aos="fade-up" data-aos-delay="100">
           <h1 className="mb-2">TING SUN</h1>
@@ -54,6 +54,7 @@ function Hero() {
                 rel="noopener noreferrer"
               >
                 <i className={`bi ${link.icon}`} aria-hidden="true"></i>
+                <span className="sr-only">{link.label}</span>
               </a>
             ))}
          </div>

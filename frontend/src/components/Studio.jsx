@@ -69,7 +69,7 @@ function Studio() {
                 </svg>
                 <i className={service.icon} aria-hidden="true"></i>
               </div>
-              <h4 id={`service-${index}-title`}>{service.title}</h4>
+              <h3 id={`service-${index}-title`}>{service.title}</h3>
               <p>{service.description}</p>
               {service.link && (
                 <Link to={service.link} className="learn-more">
