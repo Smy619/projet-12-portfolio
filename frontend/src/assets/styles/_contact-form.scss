@@ -100,14 +100,14 @@
   }
 
   &__error-message {
-    background: #df1529;
-    color: #fff;
+    background:transparent;
+    color: #df1529;
     animation: fadeInOut 4s ease forwards;
   }
 
   &__sent-message {
-    background: #059652;
-    color: #fff;
+    background:transparent;
+    color: var(--accent-color);
     animation: fadeInOut 4s ease forwards;
   }
 

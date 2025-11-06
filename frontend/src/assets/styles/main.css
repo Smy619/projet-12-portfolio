@@ -1470,13 +1470,13 @@ section,
   animation: contact-form-loading 1s linear infinite;
 }
 .contact-form__error-message {
-  background: #df1529;
-  color: #fff;
+  background: transparent;
+  color: #df1529;
   animation: fadeInOut 4s ease forwards;
 }
 .contact-form__sent-message {
-  background: #059652;
-  color: #fff;
+  background: transparent;
+  color: var(--accent-color);
   animation: fadeInOut 4s ease forwards;
 }
 .contact-form .form-label {
