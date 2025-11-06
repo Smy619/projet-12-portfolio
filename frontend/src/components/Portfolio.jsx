@@ -12,7 +12,7 @@ function Projects() {
 
   // === Fetch portfolio data ===
   useEffect(() => {
-    const url = `https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/public/assets/data/portfolioData.json`;
+    const url = `https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/frontend/public/assets/data/portfolioData.json`;
 
     fetch(url)
       .then((response) => {
