@@ -6,10 +6,28 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 //Middleware
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://solenesun.com",
+  "https://smy619.github.io",
+];
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"], 
+  })
+);
+app.options("*", cors());
 app.use(express.json());
 
 //Routes

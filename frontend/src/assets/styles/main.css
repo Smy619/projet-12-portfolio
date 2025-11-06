@@ -377,6 +377,7 @@ h6 {
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
+  border: 0;
 }
 .scroll-top i {
   font-size: 24px;
@@ -749,26 +750,44 @@ section,
 }
 .projects-gallery .gallery-filters {
   padding: 0;
-  margin: 0 auto 20px auto;
+  margin-bottom: 2rem;
   list-style: none;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
 }
 .projects-gallery .gallery-filters li {
-  cursor: pointer;
   display: inline-block;
-  padding: 8px 20px 10px 20px;
-  margin: 0 5px;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1;
-  border-radius: 50px;
-  font-family: var(--heading-font);
-  transition: all 0.3s ease-in-out;
-  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
 }
-.projects-gallery .gallery-filters li:hover, .projects-gallery .gallery-filters li.filter-selected {
+.projects-gallery .gallery-filters .filter-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--default-color);
+  padding: 5px 25px;
+  border-radius: 70px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--default-color), transparent 50%);
+}
+.projects-gallery .gallery-filters .filter-btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
   color: var(--contrast-color);
+  box-shadow: inset 0 0 0 1px var(--accent-color);
+}
+.projects-gallery .gallery-filters .filter-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+.projects-gallery .gallery-filters .filter-btn.filter-selected {
   background-color: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: inset 0 0 0 1px var(--accent-color);
+  font-weight: 600;
 }
 .projects-gallery .project-card {
   position: relative;
@@ -776,6 +795,7 @@ section,
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto !important;
   /* ---------- Hover reveal animation ---------- */
 }
 .projects-gallery .project-card:hover {
@@ -793,6 +813,7 @@ section,
   background: color-mix(in srgb, var(--background-color), transparent 10%);
   padding: 15px;
   border-radius: 6px;
+  pointer-events: none;
   /* ---------- Hover buttons ---------- */
 }
 .projects-gallery .project-card .project-info h4 {
@@ -816,6 +837,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   transition: 0.3s ease;
   line-height: 0;
+  pointer-events: auto !important;
 }
 .projects-gallery .project-card .project-info .zoom-link:hover,
 .projects-gallery .project-card .project-info .details-link:hover {
@@ -828,21 +850,6 @@ section,
 .projects-gallery .project-card:hover .project-info {
   opacity: 1;
   bottom: 0;
-}
-
-/* ---------- Lightbox Fix ---------- */
-.glightbox-container {
-  z-index: 9999999 !important;
-  pointer-events: auto !important;
-}
-
-.glightbox-clean .gdesc-inner {
-  background-color: #fff;
-}
-
-.goverlay {
-  pointer-events: auto !important;
-  cursor: zoom-out;
 }
 
 /* =========================================================
@@ -1293,7 +1300,7 @@ section,
 .portfolio-details .portfolio-description .project-presentation {
   background: color-mix(in srgb, var(--default-color), transparent 97%);
   border-left: 3px solid var(--accent-color);
-  padding: 1.5rem;
+  padding: 0rem 1.5rem 1.5rem;
   border-radius: 6px;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
@@ -1302,7 +1309,7 @@ section,
   font-size: 18px;
   font-weight: 600;
   color: var(--accent-color);
-  margin-bottom: 10px;
+  padding-top: 1.5rem;
 }
 .portfolio-details .portfolio-description .project-presentation p {
   margin: 0;
@@ -1352,8 +1359,13 @@ section,
    Contact Section (final fixed version)
 ---------------------------- */
 #contact {
-  position: relative !important;
-  z-index: 1 !important;
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+.contact,
+.contact * {
   pointer-events: auto !important;
 }
 
@@ -1361,149 +1373,6 @@ section,
   display: grid;
   gap: 2rem;
   align-items: flex-start;
-}
-
-/* ---------- Info Items ---------- */
-.contact__info {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.col-lg-8 {
-  position: relative !important;
-  z-index: 10 !important;
-  pointer-events: auto !important;
-}
-
-.contact__info-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.contact__info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-right: 15px;
-  transition: all 0.3s ease-in-out;
-}
-
-.contact__info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: var(--heading-color);
-}
-
-.contact__info-item p {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.contact__info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact__info-item + .contact__info-item {
-  margin-top: 40px;
-}
-
-/* ---------- Email Form ---------- */
-.contact-form {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form input[type=text],
-.contact-form input[type=email],
-.contact-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input[type=text]:focus,
-.contact-form input[type=email]:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 70%);
-}
-
-.contact-form input::-moz-placeholder, .contact-form textarea::-moz-placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-
-/* ---------- Submit Button ---------- */
-.contact-form__button {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  align-self: flex-start;
-  transition: all 0.4s ease;
-}
-
-.contact-form__button:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
-  transform: translateY(-2px);
-}
-
-/* ---------- Status Messages ---------- */
-.contact-form__loading,
-.contact-form__error-message,
-.contact-form__sent-message {
-  display: none;
-  padding: 15px;
-  font-weight: 600;
-  border-radius: 6px;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.contact-form__loading {
-  background: var(--surface-color);
-  color: var(--default-color);
-}
-
-.contact-form__error-message {
-  background: #df1529;
-  color: #fff;
-}
-
-.contact-form__sent-message {
-  background: #059652;
-  color: #fff;
 }
 
 /* =========================================================
@@ -1518,6 +1387,59 @@ section,
 .contact-form {
   position: relative;
   z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* ---------- Inputs ---------- */
+  /* ---------- Button ---------- */
+  /* ---------- Status Messages ---------- */
+  /* ---------- Visible States ---------- */
+}
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form input[type=text]:focus,
+.contact-form input[type=email]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+.contact-form input[type=text]::-moz-placeholder, .contact-form input[type=email]::-moz-placeholder, .contact-form textarea::-moz-placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+.contact-form input[type=text]::placeholder,
+.contact-form input[type=email]::placeholder,
+.contact-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+.contact-form__button {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.4s ease;
+}
+.contact-form__button:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  transform: translateY(-2px);
 }
 .contact-form__loading, .contact-form__error-message, .contact-form__sent-message {
   display: none;
@@ -1525,7 +1447,7 @@ section,
   font-weight: 600;
   border-radius: 6px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 10px;
   transition: all 0.3s ease;
 }
 .contact-form__loading {
@@ -1559,14 +1481,12 @@ section,
   display: block;
 }
 
-/* ----------------------------
-   Loading Animation
----------------------------- */
+/* ---------- Loading Animation ---------- */
 @keyframes contact-form-loading {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -1672,16 +1592,12 @@ section,
   .portfolio-details .portfolio-description h2 {
     font-size: 22px;
   }
-  .portfolio-details .portfolio-description .project-presentation {
-    padding: 1.2rem;
-  }
   .portfolio-details .portfolio-description .tech-list li {
     font-size: 0.85rem;
     padding: 0.35rem 0.8rem;
   }
   .portfolio-details .portfolio-info {
     margin-top: 40px;
-    text-align: center;
   }
   .portfolio-details .portfolio-info ul {
     align-items: center;
