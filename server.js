@@ -22,7 +22,7 @@ app.post("/send-email", async(req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      host:"smtp.ionos.fr",
+      host:"smtp-relay.brevo.com",
       port: 587,
       secure: false,
       auth: {
