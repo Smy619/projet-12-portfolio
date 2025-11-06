@@ -65,6 +65,7 @@ function ContactForm() {
   setStatus("error");
   setTimeout(() => setStatus("idle"), 4000);
 }
+}
 
   return (
     <form
@@ -176,5 +177,6 @@ function ContactForm() {
     </form>
   );
 }
+
 
 export default ContactForm;
