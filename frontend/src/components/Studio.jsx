@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "../assets/styles/_studio.scss";
 
 function Studio() {
@@ -10,7 +11,7 @@ function Studio() {
     const baseUrl =
       import.meta.env.MODE === "development"
         ? "/assets/data/studioServices.json"
-        : "https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/public/assets/data/studioServices.json";
+        : "https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/frontend/public/assets/data/studioServices.json";
 
     fetch(`${baseUrl}?t=${Date.now()}`)
       .then((res) => {

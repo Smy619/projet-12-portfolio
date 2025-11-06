@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GLightbox from "glightbox";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "glightbox/dist/css/glightbox.min.css";
 import Isotope from "isotope-layout";
 import imagesLoaded from "imagesloaded";
