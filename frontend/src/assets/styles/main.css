@@ -1480,6 +1480,20 @@ section,
 .contact-form.is-loading .contact-form__loading, .contact-form.is-error .contact-form__error-message, .contact-form.is-sent .contact-form__sent-message {
   display: block;
 }
+.contact-form .form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+.contact-form .is-invalid {
+  border-color: #df1529 !important;
+}
+.contact-form__error-field {
+  color: #df1529;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-align: left;
+}
 
 /* ---------- Loading Animation ---------- */
 @keyframes contact-form-loading {

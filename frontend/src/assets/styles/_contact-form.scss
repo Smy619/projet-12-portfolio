@@ -114,6 +114,22 @@
   &.is-sent &__sent-message {
     display: block;
   }
+  .form-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .is-invalid {
+    border-color: #df1529 !important;
+  }
+
+  &__error-field {
+    color: #df1529;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    text-align: left;
+  }
 }
 
 /* ---------- Loading Animation ---------- */
