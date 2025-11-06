@@ -1,4 +1,4 @@
-# ✅ Stable Vite Deployment Workflow — Do not modify unless build tool changes
+# Stable Vite Deployment Workflow — Do not modify unless build tool changes
 name: Deploy React App to GitHub Pages
 
 on:
@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
 
     steps:
       - name: Checkout code
@@ -31,5 +35,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: frontend/dist
           cname: solenesun.com 
