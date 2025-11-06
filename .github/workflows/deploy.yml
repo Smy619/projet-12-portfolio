@@ -1,3 +1,4 @@
+# ✅ Stable Vite Deployment Workflow — Do not modify unless build tool changes
 name: Deploy React App to GitHub Pages
 
 on:

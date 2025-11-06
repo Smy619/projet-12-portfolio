@@ -234,6 +234,7 @@
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
+  border:0;
 
   i {
     font-size: 24px;
@@ -244,6 +245,7 @@
   &:hover {
     background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
     color: var(--contrast-color);
+    
   }
 
   &.active {

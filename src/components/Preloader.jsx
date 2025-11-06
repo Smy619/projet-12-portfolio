@@ -15,7 +15,7 @@ function Preloader() {
   if (!loading) return null;
 
   return (
-    <div id="preloader"></div>
+    <div id="preloader" role="status" aria-live="polite" aria-label="Page loading, please wait"></div>
   );
 }
 

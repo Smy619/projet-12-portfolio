@@ -30,15 +30,21 @@ function Studio() {
   if (loading) return <p>Loading services...</p>;
 
   return (
-    <section id="studio" className="studio section">
+    <section
+      id="studio"
+      className="studio section"
+      aria-label="Digital studio services section"
+    >
       <div className="container" data-aos="fade-up">
         {/* ===== Title ===== */}
         <div className="block-title text-center">
           <h2>Solene Dev Studio</h2>
-          <p>Building digital experiences with clarity, creativity, and code.</p>
+          <p>
+            Building digital experiences with clarity, creativity, and code.
+          </p>
         </div>
 
-         {/* ===== Button ===== */}
+        {/* ===== Button ===== */}
         <div className="text-center mt-5">
           <Link to="/studio-details" className="btn btn-outline-primary">
             Discover Full Studio →
@@ -48,9 +54,11 @@ function Studio() {
         {/* ===== Grid ===== */}
         <div className="studio-grid">
           {services.map((service, index) => (
-            <div
+            <article
               key={index}
-              className={`studio-item ${service.className}`} 
+              className={`studio-item ${service.className}`}
+              role="group"
+              aria-labelledby={`service-${index}-title`}
               data-aos="zoom-in"
               data-aos-delay={100 * (index + 1)}
             >
@@ -58,20 +66,18 @@ function Studio() {
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <path d="M50 0L100 25V75L50 100L0 75V25Z" />
                 </svg>
-                <i className={service.icon}></i>
+                <i className={service.icon} aria-hidden="true"></i>
               </div>
-              <h4>{service.title}</h4>
+              <h4 id={`service-${index}-title`}>{service.title}</h4>
               <p>{service.description}</p>
               {service.link && (
                 <Link to={service.link} className="learn-more">
                   Learn more <i className="bi bi-arrow-right"></i>
                 </Link>
               )}
-            </div>
+            </article>
           ))}
         </div>
-
-       
       </div>
     </section>
   );

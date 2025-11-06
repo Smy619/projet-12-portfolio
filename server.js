@@ -22,7 +22,7 @@ app.post("/send-email", async(req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      host:"smtp.gmail.com",
+      host:"smtp.ionos.fr",
       port: 465,
       secure: true,
       auth: {

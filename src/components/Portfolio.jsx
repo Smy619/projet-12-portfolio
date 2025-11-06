@@ -10,15 +10,13 @@ function Projects() {
   const [portfolioData, setPortfolioData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch portfolio data from external JSON file
+  // === Fetch portfolio data ===
   useEffect(() => {
     const url = `https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/public/assets/data/portfolioData.json`;
-    
+
     fetch(url)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Network error: ${response.status}`);
         return response.json();
       })
       .then((data) => {
@@ -31,181 +29,195 @@ function Projects() {
       });
   }, []);
 
-  // Initialize GLightbox one time
+  // === Initialize Lightbox + Isotope ===
   useEffect(() => {
     if (!portfolioData.length) return;
-    setTimeout(() => {
-   
-      if (document.activeElement && document.activeElement.blur) {
-        document.activeElement.blur();
-      }
-    }, 100);
 
-    
+    // Initialize Lightbox
     const lightbox = GLightbox({
       selector: ".glightbox",
       touchNavigation: true,
       loop: true,
       keyboardNavigation: true,
-      autofocusVideos: false,
-      closeOnOutsideClick: true, //
+      closeOnOutsideClick: true,
       openEffect: "zoom",
       closeEffect: "fade",
-      moreText: "",
-      onOpen: () => {
-        setTimeout(() => {
-          if (document.activeElement && document.activeElement.blur) {
-            document.activeElement.blur();
-          }
-        }, 50);
-      },
     });
 
+    // FIX: only blur focus when GLightbox is open
     const handleFocusReset = () => {
-      const active = document.activeElement;
-      if (active && active.blur) active.blur();
-    };
+      // ⚠️ NOTE:
+      // This focusin listener prevents focus issues when GLightbox is open.
+      // Do NOT remove the conditional check, otherwise all input fields
+      // (like contact forms) will lose focus and become uneditable.
 
+      if (document.querySelector(".glightbox-open")) {
+        const active = document.activeElement;
+        if (active && active.blur) active.blur();
+      }
+    };
     document.addEventListener("focusin", handleFocusReset);
 
-    // Initialize Isotope and filtering
+    // === Initialize Isotope
     let isotopeInstance;
     const isotopeContainer = document.querySelector(".gallery-container");
-    const filterButtons = document.querySelectorAll(".gallery-filters li");
+    const filterButtons = document.querySelectorAll(".gallery-filters button");
+
+    // Reset any inline transform styles added by Isotope
+    document.querySelectorAll(".gallery-item").forEach((el) => {
+      el.style.transform = "none";
+    });
 
     imagesLoaded(isotopeContainer, () => {
       isotopeInstance = new Isotope(isotopeContainer, {
         itemSelector: ".gallery-item",
         layoutMode: "masonry",
       });
-      isotopeInstance.arrange({ transitionDuration: "0.4s" });
     });
 
-    // Filter button click
-    const handleFilterClick = function (event) {
+    // === Filter click handler ===
+    const handleFilterClick = (event) => {
       document
         .querySelector(".gallery-filters .filter-selected")
         ?.classList.remove("filter-selected");
 
       const target = event.currentTarget;
       target.classList.add("filter-selected");
-
       const filterValue = target.getAttribute("data-filter");
       isotopeInstance.arrange({ filter: filterValue });
     };
 
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", handleFilterClick);
-    });
+    filterButtons.forEach((btn) =>
+      btn.addEventListener("click", handleFilterClick)
+    );
 
+    // === Cleanup ===
     return () => {
       document.removeEventListener("focusin", handleFocusReset);
       lightbox.destroy();
-      filterButtons.forEach((button) => {
-        button.removeEventListener("click", handleFilterClick);
-      });
       if (isotopeInstance) isotopeInstance.destroy();
+      filterButtons.forEach((btn) =>
+        btn.removeEventListener("click", handleFilterClick)
+      );
     };
   }, [portfolioData]);
 
-  if (loading) return <p>Loading projects...</p>;
+  if (loading) return <p className="text-center">Loading projects...</p>;
 
-  // Render Projects Section
+  // === Render ===
   return (
-    <section id="projects" className="projects-gallery section-block">
+    <section
+      id="projects"
+      className="projects-gallery section-block"
+      aria-label="Portfolio projects section"
+    >
       {/* Section Title */}
-      <div className="container block-title" data-aos="fade-up">
+      <header className="container block-title" data-aos="fade-up">
         <h2>Projects</h2>
         <p>
           Explore a selection of my featured works — from professional training
           projects to personal creative experiments.
         </p>
-      </div>
+      </header>
 
       <div className="container">
-        <div
-          className="gallery-layout"
-          data-default-filter="*"
-          data-layout="masonry"
-          data-sort="original-order"
-        >
-          {/* Filter Buttons */}
+        <div className="gallery-layout" data-layout="masonry">
+          {/* === Filter Buttons === */}
           <ul
             className="gallery-filters"
             data-aos="fade-up"
             data-aos-delay="100"
+            role="tablist"
+            aria-label="Project category filters"
           >
-            <li data-filter="*" className="filter-selected">
-              All
-            </li>
-            <li data-filter=".filter-formation">Formation</li>
-            <li data-filter=".filter-personal">Personal</li>
-            <li data-filter=".filter-concept">Concept</li>
+            {[
+              { label: "All", filter: "*" },
+              { label: "Formation", filter: ".filter-formation" },
+              { label: "Personal", filter: ".filter-personal" },
+              { label: "Concept", filter: ".filter-concept" },
+            ].map(({ label, filter }) => (
+              <li key={filter}>
+                <button
+                  type="button"
+                  data-filter={filter}
+                  className={`filter-btn ${
+                    filter === "*" ? "filter-selected" : ""
+                  }`}
+                  aria-pressed={filter === "*"}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
           </ul>
 
-          {/* -------------------- Projects Grid ----------------- */}
+          {/* === Projects Grid === */}
           <div
             className="row gy-4 gallery-container"
             data-aos="fade-up"
             data-aos-delay="200"
+            role="list"
+            aria-live="polite"
           >
-            {portfolioData.length === 0 ? (
-              <p className="text-center text-muted">Loading projects...</p>
-            ) : (
-              portfolioData.map((item) => (
-                <div
-                  key={item.id}
-                  className={`col-lg-4 col-md-6 project-card gallery-item filter-${item.category.toLowerCase()}`}
-                >
-                  <img
-                    src={item.image}
-                    className="img-fluid"
-                    alt={item.title}
-                  />
-                  <div className="project-info">
-                    <h4>{item.title}</h4>
-                    <p>
-                      {Array.isArray(item.tech)
-                        ? item.tech.join(", ")
-                        : item.tech}
-                    </p>
+            {portfolioData.map((item) => (
+              <article
+                key={item.id}
+                className={`col-lg-4 col-md-6 project-card gallery-item filter-${item.category.toLowerCase()}`}
+                role="listitem"
+                aria-labelledby={`proj-${item.id}-title`}
+              >
+                <img
+                  src={item.image}
+                  className="img-fluid"
+                  alt={`${item.title} project preview`}
+                  loading="lazy"
+                />
 
-                    <span
-                      className={`badge ${
-                        item.status === "Completed"
-                          ? "bg-success"
-                          : item.status === "In Progress"
-                          ? "bg-warning"
-                          : "bg-secondary"
-                      }`}
-                    >
-                      {item.status}
-                    </span>
+                <div className="project-info">
+                  <h3 id={`proj-${item.id}-title`}>{item.title}</h3>
+                  <p>
+                    {Array.isArray(item.tech)
+                      ? item.tech.join(", ")
+                      : item.tech}
+                  </p>
 
-                    {/* Lightbox Zoom */}
-                    <a
-                      href={item.image}
-                      title={item.title}
-                      className="glightbox zoom-link"
-                    >
-                      <i className="bi bi-zoom-in"></i>
-                    </a>
+                  <span
+                    className={`badge ${
+                      item.status === "Completed"
+                        ? "bg-success"
+                        : item.status === "In Progress"
+                        ? "bg-warning"
+                        : "bg-secondary"
+                    }`}
+                    aria-label={`Status: ${item.status}`}
+                  >
+                    {item.status}
+                  </span>
 
-                    {/* Details Link */}
-                    <Link
-                      to={`/portfolio-details/${item.id}`}
-                      className="details-link"
-                      title="More Details"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="bi bi-link-45deg"></i>
-                    </Link>
-                  </div>
+                  {/* Lightbox */}
+                  <a
+                    href={item.image}
+                    title={`Zoom ${item.title}`}
+                    className="glightbox zoom-link"
+                    aria-label={`Zoom image of ${item.title}`}
+                  >
+                    <i className="bi bi-zoom-in" aria-hidden="true"></i>
+                  </a>
+
+                  {/* Details Page Link */}
+                  <Link
+                    to={`/portfolio-details/${item.id}`}
+                    className="details-link"
+                    title="View project details"
+                    aria-label={`More details about ${item.title}`}
+                    rel="noopener noreferrer"
+                  >
+                    <i className="bi bi-link-45deg" aria-hidden="true"></i>
+                  </Link>
                 </div>
-              ))
-            )}
+              </article>
+            ))}
           </div>
-          {/* End Projects Grid */}
         </div>
       </div>
     </section>

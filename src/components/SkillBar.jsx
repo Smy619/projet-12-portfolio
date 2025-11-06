@@ -4,7 +4,14 @@ import "../assets/styles/_skills.scss";
 
 function SkillBar({ level = "90%", color = "var(--accent-color)", delay = 0 }) {
   return (
-    <div className="progress-bar-wrap">
+    <div
+      className="progress-bar-wrap"
+      role="progressbar"
+      aria-valuenow={parseInt(level)}
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-label={`Skill level ${level}`}
+    >
       <motion.div
         className="progress-bar"
         initial={{ width: "0%" }}
@@ -27,4 +34,3 @@ function SkillBar({ level = "90%", color = "var(--accent-color)", delay = 0 }) {
 }
 
 export default SkillBar;
-

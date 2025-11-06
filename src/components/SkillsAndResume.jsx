@@ -13,7 +13,7 @@ function SkillsAndResume() {
   return (
     <>
       {/* -------- Skills Section -------- */}
-      <section id="expertise" className="expertise-section section-block">
+      <section id="expertise" className="expertise-section section-block" aria-label="Technical skills section">
         <div className="container" data-aos="fade-up">
           <div className="block-title">
             <h2>Skills</h2>
@@ -34,6 +34,10 @@ function SkillsAndResume() {
                     className="progress-bar"
                     style={{ width: "100%" }}
                     aria-label="Html skill 100%"
+                    role="progressbar"
+                    aria-valuenow="100"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -47,6 +51,10 @@ function SkillsAndResume() {
                     className="progress-bar"
                     style={{ width: "95%" }}
                     aria-label="CSS skill 95%"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -60,6 +68,10 @@ function SkillsAndResume() {
                     className="progress-bar"
                     style={{ width: "90%" }}
                     aria-label="JavaScript skill 90%"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -75,6 +87,10 @@ function SkillsAndResume() {
                     className="progress-bar"
                     style={{ width: "85%" }}
                     aria-label="React skill 85%"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -88,6 +104,10 @@ function SkillsAndResume() {
                     className="progress-bar"
                     style={{ width: "90%" }}
                     aria-label="WordPress skill 90%"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -101,6 +121,10 @@ function SkillsAndResume() {
                     className="progress-bar"
                     style={{ width: "85%" }}
                     aria-label="SEO skill 85%"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
                   ></div>
                 </div>
               </div>
@@ -110,7 +134,7 @@ function SkillsAndResume() {
       </section>
 
       {/* -------- Resume Section -------- */}
-      <section id="timeline" className="timeline-section section-block bg-soft">
+      <section id="timeline" className="timeline-section section-block bg-soft" aria-label="Resume and experience section">
         <div className="container" data-aos="fade-up">
           <div className="block-title">
             <h2>Resume</h2>
@@ -132,7 +156,7 @@ function SkillsAndResume() {
 
               <div className="timeline-item">
                 <h4>Web Integrator - OpenClassrooms</h4>
-                <h5>02/2025 - 11/2025</h5>
+                <time dateTime="2025-02">02/2025</time> - <time dateTime="2025-11">11/2025</time>
                 <p>
                   <em>Online Formation, France</em>
                 </p>
@@ -145,7 +169,7 @@ function SkillsAndResume() {
 
               <div className="timeline-item">
                 <h4>MASTER’S DEGREE IN COMPUTER SCIENCE</h4>
-                <h5>2013 - 2015</h5>
+                <time dateTime="2013">2013</time> - <time dateTime="2015">2015</time>
                 <p>
                   <em>Paris,France</em>
                 </p>
@@ -158,7 +182,7 @@ function SkillsAndResume() {
 
               <div className="timeline-item">
                 <h4>Web integrator</h4>
-                <h5>02/2025 - 11/2025</h5>
+                <time dateTime="2025-02">02/2025</time> -<time dateTime="2025-11">11/2025</time>
                 <p>
                   <em>OpenClassrooms</em>
                 </p>
@@ -184,7 +208,7 @@ function SkillsAndResume() {
 
               <div className="timeline-item">
                 <h4>IT Systems Consulting</h4>
-                <h5>04/2015 - 09/2019</h5>
+                <time dateTime="2015-04">04/2015</time>-<time dateTime="2019-09">09/2019</time>
                 <p>
                   <em>Freelance / Self-employed</em>
                 </p>

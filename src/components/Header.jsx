@@ -85,7 +85,7 @@ function Header() {
     <>
       {/* Mobile menu toggle icon */}
       <i
-        className="bi bi-list nav-toggle d-xl-none"
+        className="bi bi-list nav-toggle d-xl-none" aria-label="Toggle navigation menu"
         onClick={() => setShowMenu((prev) => !prev)}
       ></i>
 
@@ -96,7 +96,7 @@ function Header() {
           showMenu ? "nav-show" : ""
         }`}
       >
-        <nav id="main-nav" className="main-nav">
+        <nav id="main-nav" className="main-nav" role="navigation" aria-label="Main navigation">
           <ul>
             {/* Internal page sections (Home page navigation) */}
             {navItems.map(({ href, icon, label }) => (
@@ -108,7 +108,7 @@ function Header() {
                     active === href ? "active" : ""
                   }`}
                 >
-                  <i className={`bi ${icon}`}></i>
+                  <i className={`bi ${icon}`} aria-hidden="true"></i>
                   <span>{label}</span>
                 </a>
               </li>
@@ -124,7 +124,7 @@ function Header() {
                   }`}
                   onClick={() => setShowMenu(false)}
                 >
-                  <i className={`bi ${icon}`}></i>
+                  <i className={`bi ${icon}`} aria-hidden="true"></i>
                   <span>{label}</span>
                 </Link>
               </li>

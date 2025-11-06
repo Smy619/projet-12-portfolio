@@ -2,47 +2,64 @@ import "../assets/styles/_layout.scss";
 
 function Footer() {
   return (
-    <footer id="site-footer" className="site-footer">
-      <div className="container">
-        <h3 className="footer-title">TING SUN</h3>
+    <footer id="site-footer" className="site-footer" role="contentinfo">
+      <div className="container text-center">
+        {/* === Brand === */}
+        <h3 className="footer-title">Ting Sun</h3>
         <p className="footer-text">
           Building beautiful, accessible, and performant web experiences.
         </p>
 
-        <div className="footer-social-links">
+        {/* === Social Links === */}
+        <nav className="footer-social-links" aria-label="Social media links">
           <a
             href="https://github.com/Smy619"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub Profile"
             className="me-3"
           >
-            <i className="bi bi-github"></i>
+            <i className="bi bi-github" aria-hidden="true"></i>
           </a>
+
           <a
             href="https://www.linkedin.com/in/tingsun85"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
+            className="me-3"
           >
-            <i className="bi bi-linkedin"></i>
+            <i className="bi bi-linkedin" aria-hidden="true"></i>
           </a>
+
           <a
             href="https://www.facebook.com/TingSunDev/"
-            aria-label="LinkedIn Profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook Profile"
+            className="me-3"
           >
-            <i className="bi bi-facebook"></i>
+            <i className="bi bi-facebook" aria-hidden="true"></i>
           </a>
+
           <a
             href="https://x.com/SoleneDevStudio"
-            aria-label="LinkedIn Profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter) Profile"
+            className="me-3"
           >
-            <i className="bi bi-twitter"></i>
+            <i className="bi bi-twitter" aria-hidden="true"></i>
           </a>
-        </div>
+        </nav>
 
-        <div className="footer-copy">
+        {/* === Copyright === */}
+        <div className="footer-copy mt-3">
           &copy; {new Date().getFullYear()}{" "}
           <strong>
             <span>Ting Sun</span>
           </strong>{" "}
-         Rebuilt From Open-source Inspiration.
+          — Rebuilt from open-source inspiration.
         </div>
       </div>
     </footer>

@@ -284,7 +284,7 @@ function CV() {
                 >
                   {skill.name}
                 </motion.p>
-                <SkillBar level={skill.level} color="#2b7a69" delay={i * 0.2} />
+                <SkillBar level={skill.level} color="var(--accent-color)" delay={i * 0.2} />
               </div>
             ))}
           </section>

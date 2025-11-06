@@ -5,16 +5,16 @@ function About() {
     <section id="profile" className="profile-section section-block bg-soft">
       <div className="container" data-aos="fade-up">
         {/* ===== Title ===== */}
-        <div className="block-title text-center">
+        <header className="block-title text-center">
           <h2>About</h2>
           <p>
             Front-end developer based in France, passionate about rebuilding and modernizing
             websites through structured architecture, clean design, and automated workflows.
           </p>
-        </div>
+        </header>
 
         {/* ===== Story Content ===== */}
-        <div
+        <article
           className="profile-content text-center"
           data-aos="fade-up"
           data-aos-delay="200"
@@ -47,7 +47,7 @@ function About() {
           <p className="sous-text mt-3">
             <em>Rebuilding structure, refining systems, and automating what comes next.</em>
           </p>
-        </div>
+        </article>
       </div>
     </section>
   );

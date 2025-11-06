@@ -5,7 +5,7 @@
    Description: Responsive portfolio gallery with filter tabs and hover overlay
    ========================================================= */
 
-@use './variables';
+@use "./variables";
 
 /* ----------------------------
    Projects Gallery Section
@@ -14,27 +14,51 @@
   /* ---------- Filters ---------- */
   .gallery-filters {
     padding: 0;
-    margin: 0 auto 20px auto;
+    margin-bottom: 2rem;
     list-style: none;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
 
     li {
-      cursor: pointer;
       display: inline-block;
-      padding: 8px 20px 10px 20px;
-      margin: 0 5px;
-      font-size: 15px;
+    }
+    .filter-btn {
+      border: none;
+      background-color: transparent;
+      color: var(--default-color);
+      padding: 5px 25px;
+      border-radius: 70px;
+      font-size: 1rem;
       font-weight: 500;
-      line-height: 1;
-      border-radius: 50px;
-      font-family: var(--heading-font);
-      transition: all 0.3s ease-in-out;
-      background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: none;
+      box-shadow: inset 0 0 0 1px
+        color-mix(in srgb, var(--default-color), transparent 50%);
 
-      &:hover,
-      &.filter-selected {
+      &:hover {
+        background-color: color-mix(
+          in srgb,
+          var(--accent-color),
+          transparent 15%
+        );
         color: var(--contrast-color);
+        box-shadow: inset 0 0 0 1px var(--accent-color);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 3px;
+      }
+
+      &.filter-selected {
         background-color: var(--accent-color);
+        color: var(--contrast-color);
+        box-shadow: inset 0 0 0 1px var(--accent-color);
+        font-weight: 600;
       }
     }
   }
@@ -51,8 +75,7 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     }
-
-    .project-info {
+   .project-info {
       opacity: 0;
       position: absolute;
       left: 12px;
@@ -111,15 +134,18 @@
 /* ---------- Lightbox Fix ---------- */
 .glightbox-container {
   z-index: 9999999 !important;
-   pointer-events: auto !important;
-
+  pointer-events: auto !important;
 }
 .glightbox-clean .gdesc-inner {
   background-color: #fff;
 }
 
-
 .goverlay {
   pointer-events: auto !important;
   cursor: zoom-out;
 }
+.project-card,
+.gallery-item {
+  pointer-events: none !important;
+}
+

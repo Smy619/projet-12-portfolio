@@ -13,8 +13,58 @@
 .contact-form {
   position: relative;
   z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 
-  // -------- Base Message Styles --------
+  /* ---------- Inputs ---------- */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+    color: var(--default-color);
+    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+
+    &::placeholder {
+      color: color-mix(in srgb, var(--default-color), transparent 70%);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  /* ---------- Button ---------- */
+  &__button {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    border: 0;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 25%);
+      transform: translateY(-2px);
+    }
+  }
+
+  /* ---------- Status Messages ---------- */
   &__loading,
   &__error-message,
   &__sent-message {
@@ -23,11 +73,10 @@
     font-weight: 600;
     border-radius: 6px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 10px;
     transition: all 0.3s ease;
   }
 
-  // -------- Loading State --------
   &__loading {
     background: var(--surface-color);
     color: var(--default-color);
@@ -48,20 +97,18 @@
     }
   }
 
-  // -------- Error State --------
   &__error-message {
     background: #df1529;
     color: #fff;
     text-align: left;
   }
 
-  // -------- Success State --------
   &__sent-message {
     background: #059652;
     color: #fff;
   }
 
-  // -------- Visible State Modifier --------
+  /* ---------- Visible States ---------- */
   &.is-loading &__loading,
   &.is-error &__error-message,
   &.is-sent &__sent-message {
@@ -69,14 +116,12 @@
   }
 }
 
-/* ----------------------------
-   Loading Animation
----------------------------- */
+/* ---------- Loading Animation ---------- */
 @keyframes contact-form-loading {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
