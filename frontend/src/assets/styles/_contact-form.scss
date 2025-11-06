@@ -68,15 +68,15 @@
   &__loading,
   &__error-message,
   &__sent-message {
-    display: block;
+    display: block; 
+    opacity: 1;
+    transform: translateY(0);
     padding: 15px;
     font-weight: 600;
     border-radius: 6px;
     text-align: center;
     margin-top: 10px;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   &__loading {
@@ -86,7 +86,6 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    opacity: 1;
 
     &::before {
       content: "";
@@ -103,20 +102,15 @@
   &__error-message {
     background: #df1529;
     color: #fff;
-    text-align: left;
+    animation: fadeInOut 4s ease forwards;
   }
 
   &__sent-message {
     background: #059652;
     color: #fff;
+    animation: fadeInOut 4s ease forwards;
   }
 
-  /* ---------- Visible States ---------- */
-  &.is-loading &__loading,
-  &.is-error &__error-message,
-  &.is-sent &__sent-message {
-    display: block;
-  }
   .form-label {
     font-weight: 600;
     margin-bottom: 6px;
@@ -135,12 +129,31 @@
   }
 }
 
-/* ---------- Loading Animation ---------- */
+/* ---------- Animations ---------- */
 @keyframes contact-form-loading {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
   }
 }
