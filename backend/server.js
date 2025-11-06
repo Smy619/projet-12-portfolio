@@ -47,23 +47,36 @@ app.post("/send", async (req, res) => {
         "api-key": process.env.BREVO_API_KEY,
         "content-type": "application/json",
       },
-      body: JSON.stringify({
-        sender: { name, email },
-        to: [{ email: process.env.EMAIL_RECEIVER }],
-        subject: `Message from ${name}`,
-        textContent: `Email: ${email}\n\nMessage:\n${message}`,
+  body: JSON.stringify({
+        sender: {
+          name: "Ting Sun",
+          email: process.env.EMAIL_SENDER, 
+        },
+        to: [
+          {
+            email: process.env.EMAIL_RECEIVER, 
+          },
+        ],
+        replyTo: {
+          email,
+          name,
+        },
+        subject: `New message from ${name}`,
+        textContent: `From: ${name} <${email}>\n\n${message}`,
       }),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Brevo API error: ${response.status} ${errorText}`);
+      console.error("❌ Brevo API error:", data);
+      throw new Error(data.message || "Failed to send email");
     }
 
-    console.log(`Email sent from ${email}`);
+    console.log("✅ Email sent successfully:", data);
     res.status(200).json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("❌ Error sending email:", error);
     res.status(500).json({ success: false, error: error.message });
   }
 });
