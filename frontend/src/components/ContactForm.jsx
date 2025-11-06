@@ -42,26 +42,29 @@ function ContactForm() {
   
     setStatus("loading");
 
-    try {
-      const response = await fetch(`${apiUrl}/send`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-        const data = await response.json();
+  try {
+  const response = await fetch(`${apiUrl}/send`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
 
-      if (response.ok && data.success) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        console.error("Send failed:", data);
-        setStatus("error");
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus("error");
-    }
-  };
+  const data = await response.json();
+  console.log("📨 Server response:", data);
+
+  if (response.ok) {
+    setStatus("success");
+    setFormData({ name: "", email: "", message: "" });
+    setTimeout(() => setStatus("idle"), 4000);
+  } else {
+    setStatus("error");
+    setTimeout(() => setStatus("idle"), 4000);
+  }
+} catch (error) {
+  console.error("Error sending message:", error);
+  setStatus("error");
+  setTimeout(() => setStatus("idle"), 4000);
+}
 
   return (
     <form
