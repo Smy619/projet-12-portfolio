@@ -25,6 +25,8 @@ dist-ssr
 
 
 .env
+/backend/.env
+/frontend/.env
 
 # ignore all node_modules folders
 node_modules/

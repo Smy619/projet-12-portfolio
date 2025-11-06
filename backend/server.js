@@ -17,7 +17,7 @@ app.get("/",(req, res) => {
   res.send("Email API is running!");
 })
 
-app.post("/send-email", async(req, res) => {
+app.post("/send", async(req, res) => {
   const  { name, email, message } = req.body;
 
   try {
