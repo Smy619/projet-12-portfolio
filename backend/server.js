@@ -1,14 +1,13 @@
 import express from "express";
-import nodemailer from "nodemailer";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import fetch from "node-fetch";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-//Middleware
+// === CORS CONFIG ===
 const allowedOrigins = [
   "http://localhost:5173",
   "https://solenesun.com",
@@ -24,45 +23,48 @@ app.use(
       }
     },
     methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"], 
+    allowedHeaders: ["Content-Type"],
   })
 );
 app.options("*", cors());
 app.use(express.json());
 
-//Routes
-app.get("/",(req, res) => {
+// === TEST ROUTE ===
+app.get("/", (req, res) => {
   res.send("Email API is running!");
-})
+});
 
-app.post("/send", async(req, res) => {
-  const  { name, email, message } = req.body;
+// === POST /send ===
+app.post("/send", async (req, res) => {
+  const { name, email, message } = req.body;
 
   try {
-    const transporter = nodemailer.createTransport({
-      host:"smtp-relay.brevo.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "accept": "application/json",
+        "api-key": process.env.BREVO_API_KEY,
+        "content-type": "application/json",
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
-    await transporter.sendMail({
-      from :`"Portfolio Contact" <contact@solenesun.com>`,
-      to : process.env.EMAIL_RECEIVER,
-      subject: `New message from ${name}`,
-      text: `Email: ${email}\n\nMessage:\n${message}`
+      body: JSON.stringify({
+        sender: { name, email },
+        to: [{ email: process.env.EMAIL_RECEIVER }],
+        subject: `Message from ${name}`,
+        textContent: `Email: ${email}\n\nMessage:\n${message}`,
+      }),
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Brevo API error: ${response.status} ${errorText}`);
+    }
+
     console.log(`Email sent from ${email}`);
-    res.status(200).json({ success:true, message: "Email sent successfully! "})
+    res.status(200).json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Error sending email= ",error);
+    console.error("Error sending email:", error);
     res.status(500).json({ success: false, error: error.message });
   }
-  });
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
