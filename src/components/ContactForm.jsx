@@ -15,11 +15,12 @@ function ContactForm() {
   };
 
   const handleSubmit = async (e) => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     e.preventDefault();
     setStatus("loading");
 
     try {
-      const response = await fetch("https://solenesun-com.onrender.com/send-email", {
+      const response = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
