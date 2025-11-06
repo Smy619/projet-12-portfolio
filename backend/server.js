@@ -12,6 +12,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://solenesun.com",
   "https://smy619.github.io",
+  "www.solenesun.com",
 ];
 app.use(
   cors({
