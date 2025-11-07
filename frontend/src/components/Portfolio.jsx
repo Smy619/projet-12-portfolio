@@ -10,6 +10,7 @@ import "../assets/styles/_projects.scss";
 function Projects() {
   const [portfolioData, setPortfolioData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [activeFilter, setActiveFilter] = useState("*");
 
   // === Fetch portfolio data ===
   useEffect(() => {
@@ -103,6 +104,20 @@ function Projects() {
     };
   }, [portfolioData]);
 
+  useEffect(() => {
+    const buttons = document.querySelectorAll(".gallery-filters button");
+    buttons.forEach((btn, i) => {
+      btn.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") buttons[(i + 1) % buttons.length].focus();
+        if (e.key === "ArrowLeft")
+          buttons[(i - 1 + buttons.length) % buttons.length].focus();
+      });
+    });
+    return () => {
+      buttons.forEach((btn) => btn.removeEventListener("keydown", () => {}));
+    };
+  }, []);
+
   if (loading) return <p className="text-center">Loading projects...</p>;
 
   // === Render ===
@@ -128,7 +143,7 @@ function Projects() {
             className="gallery-filters"
             data-aos="fade-up"
             data-aos-delay="100"
-            role="tablist"
+            role="group"
             aria-label="Project category filters"
           >
             {[
@@ -137,22 +152,17 @@ function Projects() {
               { label: "Personal", filter: ".filter-personal" },
               { label: "Concept", filter: ".filter-concept" },
             ].map(({ label, filter }) => (
-              <li key={filter} role="presentation">
-                <button
-                  type="button"
-                  role="tab"
-                  id={`tab-${filter.replace(".", "")}`}
-                  aria-controls={`panel-${filter.replace(".", "")}`}
-                  aria-selected={filter === "*"}
-                  data-filter={filter}
-                  className={`filter-btn ${
-                    filter === "*" ? "filter-selected" : ""
-                  }`}
-                  aria-pressed={filter === "*"}
-                >
-                  {label}
-                </button>
-              </li>
+              <button
+                type="button"
+                aria-pressed={activeFilter === filter}
+                data-filter={filter}
+                className={`filter-btn ${
+                  activeFilter === filter ? "filter-selected" : ""
+                }`}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {label}
+              </button>
             ))}
           </ul>
 
@@ -215,7 +225,6 @@ function Projects() {
                     className="details-link"
                     title="View project details"
                     aria-label={`More details about ${item.title}`}
-                    rel="noopener noreferrer"
                   >
                     <i className="bi bi-link-45deg" aria-hidden="true"></i>
                   </Link>

@@ -84,10 +84,13 @@ function Header() {
   return (
     <>
       {/* Mobile menu toggle icon */}
-      <i
-        className="bi bi-list nav-toggle d-xl-none" aria-label="Toggle navigation menu"
+      <button
+        type="button"
+        className="bi bi-list nav-toggle d-xl-none"
+        aria-label="Toggle navigation menu"
+        aria-expanded={showMenu}
         onClick={() => setShowMenu((prev) => !prev)}
-      ></i>
+      ></button>
 
       {/* Main navigation header */}
       <header
@@ -96,7 +99,12 @@ function Header() {
           showMenu ? "nav-show" : ""
         }`}
       >
-        <nav id="main-nav" className="main-nav" role="navigation" aria-label="Main navigation">
+        <nav
+          id="main-nav"
+          className="main-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
           <ul>
             {/* Internal page sections (Home page navigation) */}
             {navItems.map(({ href, icon, label }) => (
@@ -109,7 +117,7 @@ function Header() {
                   }`}
                 >
                   <i className={`bi ${icon}`} aria-hidden="true"></i>
-                  <span>{label}</span>
+                  <span className="visually-hidden">{label}</span>
                 </a>
               </li>
             ))}
@@ -125,7 +133,7 @@ function Header() {
                   onClick={() => setShowMenu(false)}
                 >
                   <i className={`bi ${icon}`} aria-hidden="true"></i>
-                  <span>{label}</span>
+                  <span className="visually-hidden">{label}</span>
                 </Link>
               </li>
             ))}

@@ -27,7 +27,7 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
-app.options("*", cors());
+app.options(/.*/, cors());
 app.use(express.json());
 
 // === TEST ROUTE ===
