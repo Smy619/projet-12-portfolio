@@ -9,7 +9,7 @@ import "../assets/styles/_hero.scss";
 
 function Hero() {
   const typedElement = useRef(null);
-  const heroImg = "/assets/img/hero-bg.jpg";
+  const heroImg = "/assets/img/hero-bg.webp";
 
   const socialLinks = [
   { href: "https://github.com/Smy619", icon: "bi-github", label: "GitHub"},

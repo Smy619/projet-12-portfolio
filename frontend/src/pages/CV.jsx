@@ -27,7 +27,7 @@ function CV() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="cv-photo">
-            <img src="/assets/img/profile-img.jpg" alt="Profile" />
+            <img src="/assets/img/profile-img.webp" alt="Profile" />
           </div>
 
           {/* ===== CONTACT ===== */}

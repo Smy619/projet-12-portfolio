@@ -79,12 +79,12 @@
     "id": 5,
     "title": "AI Job Hunter",
     "category": "Personal",
-    "image": "/assets/img/masonry-portfolio/masonry-portfolio-5.jpg",
+    "image": "/assets/img/portfolio/p1.webp",
     "images": [
-      "/assets/img/portfolio/app-1.jpg",
-      "/assets/img/portfolio/product-1.jpg",
-      "/assets/img/portfolio/books-1.jpg",
-      "/assets/img/portfolio/branding-1.jpg"
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
     ],
     "description": "AI-powered automation tool that generates and sends customized job applications to remote offers.",
     "objective": "Automate the job-hunting process by generating personalized applications using artificial intelligence.",
@@ -99,7 +99,13 @@
     "id": 6,
     "title": "AI Theme2WP",
     "category": "Personal",
-    "image": "/assets/img/masonry-portfolio/masonry-portfolio-6.jpg",
+    "image": "/assets/img/portfolio/p2.webp",
+    "images": [
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
+    ],
     "description": "Tool that converts static HTML templates into dynamic WordPress themes using AI assistance.",
     "objective": "Build an AI-powered tool that automatically converts static HTML templates into dynamic WordPress themes.",
     "skills": "Node.js, React, OpenAI API integration, front-end to PHP structure conversion.",
@@ -113,12 +119,12 @@
     "id": 7,
     "title": "AI Tarot Project",
     "category": "Personal",
-    "image": "/assets/img/masonry-portfolio/masonry-portfolio-7.jpg",
+    "image": "/assets/img/masonry-portfolio/p3.webp",
     "images": [
-      "/assets/img/portfolio/app-1.jpg",
-      "/assets/img/portfolio/product-1.jpg",
-      "/assets/img/portfolio/books-1.jpg",
-      "/assets/img/portfolio/branding-1.jpg"
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
     ],
     "description": "Interactive AI-powered tarot reading web app blending psychology and symbolic storytelling.",
     "objective": "Create an interactive tarot reading application that combines AI with symbolic psychology.",
@@ -133,12 +139,12 @@
     "id": 8,
     "title": "AI Email Assistant",
     "category": "Concept",
-    "image": "/assets/img/masonry-portfolio/masonry-portfolio-8.jpg",
+    "image": "/assets/img/portfolio/p4.webp",
     "images": [
-      "/assets/img/portfolio/app-1.jpg",
-      "/assets/img/portfolio/product-1.jpg",
-      "/assets/img/portfolio/books-1.jpg",
-      "/assets/img/portfolio/branding-1.jpg"
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
     ],
     "description": "AI-based assistant that reads, summarizes, and writes emails automatically.",
     "objective": "Design an intelligent assistant capable of reading, summarizing, and writing emails automatically using AI.",
