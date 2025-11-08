@@ -63,57 +63,7 @@
         ]
       }
     </script>
-
-    <!-- ============================= -->
-    <!-- ⚡ Performance Optimization -->
-    <!-- ============================= -->
-
-    <!-- Preconnect to main domain -->
-    <link rel="preconnect" href="https://solenesun.com" crossorigin />
-
-    <!-- Preload key assets (fonts, hero image, CSS) -->
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="/assets/bootstrap-icons.woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/img/hero-bg.webp"
-      imagesrcset="/assets/img/hero-bg.webp 1x, /assets/img/hero-bg@2x.webp 2x"
-    />
-
-    <!-- Async CSS loading -->
-    <link
-      rel="preload"
-      as="style"
-      href="/assets/index-Rcd-mQPb.css"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="/assets/index-Rcd-mQPb.css" /></noscript>
-
-    <!-- ============================= -->
-    <!-- 🧩 Fonts & Accessibility -->
-    <!-- ============================= -->
-    <style>
-      @font-face {
-        font-family: "bootstrap-icons";
-        src: url("/assets/bootstrap-icons.woff2") format("woff2");
-        font-display: swap; /* avoids blocking rendering */
-      }
-
-      /* Basic body fallback to reduce CLS */
-      body {
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-        background-color: #fff;
-        color: #111;
-      }
-    </style>
   </head>
-
   <body>
     <div id="root"></div>
 
