@@ -151,18 +151,25 @@ function Projects() {
               { label: "Formation", filter: ".filter-formation" },
               { label: "Personal", filter: ".filter-personal" },
               { label: "Concept", filter: ".filter-concept" },
-            ].map(({ label, filter }) => (
-              <button
-                type="button"
-                aria-pressed={activeFilter === filter}
-                data-filter={filter}
-                className={`filter-btn ${
-                  activeFilter === filter ? "filter-selected" : ""
-                }`}
-                onClick={() => setActiveFilter(filter)}
+            ].map(({ label, filter }, index) => (
+              <li
+                key={filter}
+                role="presentation"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
-                {label}
-              </button>
+                <button
+                  type="button"
+                  aria-pressed={activeFilter === filter}
+                  data-filter={filter}
+                  className={`filter-btn ${
+                    activeFilter === filter ? "filter-selected" : ""
+                  }`}
+                  onClick={() => setActiveFilter(filter)}
+                >
+                  {label}
+                </button>
+              </li>
             ))}
           </ul>
 
