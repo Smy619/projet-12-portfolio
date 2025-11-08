@@ -1,7 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/Home";
-
 import Header from "./components/Header";
 import CV from "./pages/CV";
 import PortfolioDetails from "./pages/PortfolioDetails";
