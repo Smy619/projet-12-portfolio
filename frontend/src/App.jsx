@@ -1,10 +1,10 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/Home";
-import Preloader from "./components/Preloader";
+
 import Header from "./components/Header";
 import CV from "./pages/CV";
-import PortfolioDetails from "./pages/PortfolioDetails"
+import PortfolioDetails from "./pages/PortfolioDetails";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import UnderConstruction from "./pages/UnderConstruction";
@@ -23,23 +23,19 @@ function App() {
   }, []);
   return (
     <HashRouter>
-      <Preloader />
       <Header />
-       <ScrollTop />
+      <ScrollTop />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cv" element={<CV />} />
           <Route path="/studio-Details" element={<UnderConstruction />} />
-          <Route
-            path="/portfolio-details/:id"
-            element={<PortfolioDetails />}
-          />
+          <Route path="/portfolio-details/:id" element={<PortfolioDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
-     </HashRouter>
+    </HashRouter>
   );
 }
 

@@ -120,6 +120,7 @@ function PortfolioDetails() {
                           )}`
                     }
                     alt={`${project.title}-${index}`}
+                    loading="lazy"
                   />
                 </SwiperSlide>
               ))}
