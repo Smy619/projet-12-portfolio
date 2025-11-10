@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "./pages/Home";
 import Header from "./components/Header";
@@ -21,7 +21,7 @@ function App() {
     });
   }, []);
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Header />
       <ScrollTop />
       <main className="main">
@@ -34,7 +34,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

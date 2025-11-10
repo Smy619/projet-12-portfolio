@@ -29,3 +29,7 @@ backend/.env
 
 # ignore all node_modules folders
 node_modules/
+
+# output
+Lighthouse desktop.pdf
+Lighthouse mobile.pdf
