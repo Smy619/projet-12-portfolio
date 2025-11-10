@@ -73,8 +73,9 @@ function ContactForm() {
       className="contact-form"
       noValidate
     >
-       {/* ---------- Name ---------- */}
+      
       <div className="row gy-4">
+         {/* ---------- Name ---------- */}
         <div className="col-md-6">
           <label htmlFor="name" className="form-label">
             Your Name
@@ -89,11 +90,12 @@ function ContactForm() {
               errors.name ? "is-invalid" : ""
             }`}
             placeholder="Your Name"
-            aria-describedby="error-name"
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "error-name" : undefined}
             required
           />
           {errors.name && (
-            <div id="error-name" className="contact-form__error-field">
+            <div id="error-name" className="contact-form__error-field" role="alert">
               {errors.name}
             </div>
           )}
@@ -114,11 +116,12 @@ function ContactForm() {
               errors.email ? "is-invalid" : ""
             }`}
             placeholder="Your Email"
-            aria-describedby="error-email"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "error-email" : undefined}
             required
           />
           {errors.email && (
-            <div id="error-email" className="contact-form__error-field">
+            <div id="error-email" className="contact-form__error-field" role="alert">
               {errors.email}
             </div>
           )}
@@ -139,11 +142,12 @@ function ContactForm() {
               errors.message ? "is-invalid" : ""
             }`}
             placeholder="Message"
-            aria-describedby="error-message"
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "error-message" : undefined}
             required
           ></textarea>
           {errors.message && (
-            <div id="error-message" className="contact-form__error-field">
+            <div id="error-message" className="contact-form__error-field" role="alert">
               {errors.message}
             </div>
           )}
@@ -152,15 +156,15 @@ function ContactForm() {
         {/* ---------- Status ---------- */}
         <div className="col-md-12 text-center">
           {status === "loading" && (
-            <div className="contact-form__loading">Sending message...</div>
+            <div className="contact-form__loading" role="status">Sending message...</div>
           )}
           {status === "success" && (
-            <div className="contact-form__sent-message">
+            <div className="contact-form__sent-message" role="status">
               ✅ Your message has been sent. Thank you!
             </div>
           )}
           {status === "error" && (
-            <div className="contact-form__error-message">
+            <div className="contact-form__error-message" role="status">
               ❌ Failed to send message. Please try again.
             </div>
           )}
