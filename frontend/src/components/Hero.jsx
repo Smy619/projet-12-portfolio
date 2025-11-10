@@ -40,9 +40,9 @@ function Hero() {
 
        <div className="container" data-aos="fade-up" data-aos-delay="100">
           <h1 className="mb-2">TING SUN</h1>
-          <h2>
+          <p>
             I'm a <span ref={typedElement} aria-live="polite"></span>
-          </h2>
+          </p>
           <div className="social-links mt-3" aria-label="Social media links">
             {socialLinks.map((link, index) => (
               <a
