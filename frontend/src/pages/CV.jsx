@@ -170,7 +170,7 @@ function CV() {
             <div className="download">
               {" "}
               <a
-                href="/assets/pdf/EN_CV_2025-10-31_TING_SUN.pdf"
+                href="/assets/pdf/En_ATS_CV_2025-11-10_TING_SUN.pdf"
                 download
                 className="cv-download"
               >
