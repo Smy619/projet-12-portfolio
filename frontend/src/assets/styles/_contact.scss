@@ -12,8 +12,9 @@
 ---------------------------- */
 #contact {
   position: relative;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
+  z-index: 9999;
+  pointer-events: auto;
+  background-color: transparent;
 }
 
 .contact,
