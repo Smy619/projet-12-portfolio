@@ -118,3 +118,13 @@ h6 {
     color: #fff;
   }
 }
+.typed-cursor {
+  color: #272829 !important;
+  opacity: 1 !important;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
