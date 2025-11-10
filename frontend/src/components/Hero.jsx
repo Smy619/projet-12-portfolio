@@ -21,7 +21,7 @@ function Hero() {
 
   useEffect(() => {
     const typed = new Typed(typedElement.current, {
-      strings: ["Web Developer.", "Front-end React.", "Freelancer."],
+      strings: ["Web Developer", "Front-end React", "Freelancer"],
       typeSpeed: 70,
       backSpeed: 40,
       backDelay: 2000,
