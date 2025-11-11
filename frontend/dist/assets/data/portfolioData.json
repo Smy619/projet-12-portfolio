@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio-architecte-sophie-bluel",
+    "category": "Formation",
+    "image": "/assets/img/portfolio/P6_4.webp",
+    "images": [
+      "/assets/img/portfolio/P6_1.webp",
+      "/assets/img/portfolio/P6_2.webp",
+      "/assets/img/portfolio/P6_3.webp",
+      "/assets/img/portfolio/P6_5.webp"
+    ],
+    "description": "Development of an interactive architecture portfolio website using dynamic filters, DOM manipulation, and event handling in vanilla JavaScript.",
+    "objective": "Build an interactive architecture portfolio website from a static mockup, making the gallery dynamic with pure JavaScript.",
+    "skills": "DOM manipulation, event handling, API integration, and building an interface fully accessible via keyboard navigation.",
+    "improvements": "Add alt attributes to all images, proper labels for form fields, and ensure full keyboard navigation accessibility.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "status": "Completed",
+    "year": 2025,
+    "url": "https://github.com/Smy619/Portfolio-architecte-sophie-bluel"
+  },
+  {
+    "id": 2,
+    "title": "Kasa",
+    "category": "Formation",
+    "image": "/assets/img/portfolio/P7_1.webp",
+    "images": [
+      "/assets/img/portfolio/P7_2.webp",
+      "/assets/img/portfolio/P7_3.webp"
+    ],
+    "description": "Full redesign of a property rental website as a React single-page application with reusable components and dynamic routing.",
+    "objective": "Rebuild a real estate website as a dynamic and responsive single-page application using React.",
+    "skills": "React Router, reusable components, props management, responsive design, and code structure using Vite and SCSS.",
+    "improvements": "Check heading hierarchy (H1, H2, H3), add meta descriptions for each page, and ensure keyboard navigation is accessible.",
+    "tech": ["React", "React Router", "Vite", "SCSS"],
+    "status": "Completed",
+    "year": 2025,
+    "url": "https://github.com/Smy619/web-Kasa"
+  },
+  {
+    "id": 3,
+    "title": "ArgentBank",
+    "category": "Formation",
+    "image": "/assets/img/portfolio/P10_1.webp",
+    "images": [
+      "/assets/img/portfolio/P10_2.webp",
+      "/assets/img/portfolio/P10_3.webp",
+      "/assets/img/portfolio/P10_4.webp",
+      "/assets/img/portfolio/P10_5.webp"
+    ],
+    "description": "Complete banking web app with user authentication, transaction management, and state handling via Redux.",
+    "objective": "Develop a complete banking web application with user authentication and state management through Redux.",
+    "skills": "React, Redux Toolkit, REST API, Node.js, MongoDB, state management, and JWT authentication.",
+    "improvements": "Improve form error handling, add accessible validation messages, and optimize semantic HTML structure.",
+    "tech": ["React", "Redux", "Node.js", "MongoDB"],
+    "status": "Completed",
+    "year": 2025,
+    "url": "https://github.com/Smy619/ArgentBank"
+  },
+  {
+    "id": 4,
+    "title": "MonResto WordPress Theme",
+    "category": "Personal",
+    "image": "/assets/img/portfolio/monresto_1.webp",
+    "images": [
+      "/assets/img/portfolio/monresto_2.webp",
+      "/assets/img/portfolio/monresto_3.webp"
+    ],
+    "description": "Commercial WordPress restaurant theme with WooCommerce integration and custom front-end animations.",
+    "objective": "Design a commercial WordPress theme for restaurants with WooCommerce support and modern animations.",
+    "skills": "Modular SCSS, front-end JavaScript, WordPress theme development, responsive layout, and UX optimization.",
+    "improvements": "Work on SEO (title and meta description), improve contrast and accessibility for buttons and form elements.",
+    "tech": ["WordPress", "SCSS", "JavaScript"],
+    "status": "Completed",
+    "year": 2025,
+    "url": "https://github.com/Smy619/yuzuresto"
+  },
+  {
+    "id": 5,
+    "title": "AI Job Hunter",
+    "category": "Personal",
+    "image": "/assets/img/portfolio/p1.webp",
+    "images": [
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
+    ],
+    "description": "AI-powered automation tool that generates and sends customized job applications to remote offers.",
+    "objective": "Automate the job-hunting process by generating personalized applications using artificial intelligence.",
+    "skills": "Automation logic, OpenAI API integration, React UI design, and async data management.",
+    "improvements": "Strengthen data security, improve accessibility for the dashboard, and add analytics features.",
+    "tech": ["React", "OpenAI API", "Automation"],
+    "status": "In Progress",
+    "year": 2025,
+    "url": "https://github.com/Smy619/AI-Job-Hunter"
+  },
+  {
+    "id": 6,
+    "title": "AI Theme2WP",
+    "category": "Personal",
+    "image": "/assets/img/portfolio/p2.webp",
+    "images": [
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
+    ],
+    "description": "Tool that converts static HTML templates into dynamic WordPress themes using AI assistance.",
+    "objective": "Build an AI-powered tool that automatically converts static HTML templates into dynamic WordPress themes.",
+    "skills": "Node.js, React, OpenAI API integration, front-end to PHP structure conversion.",
+    "improvements": "Enhance HTML structure compatibility, improve UI accessibility, and add drag-and-drop features for template mapping.",
+    "tech": ["Node.js", "React", "OpenAI API"],
+    "status": "In Progress",
+    "year": 2025,
+    "url": "https://github.com/Smy619/AI-Theme2WP"
+  },
+  {
+    "id": 7,
+    "title": "AI Tarot Project",
+    "category": "Personal",
+    "image": "/assets/img/portfolio/p3.webp",
+    "images": [
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
+    ],
+    "description": "Interactive AI-powered tarot reading web app blending psychology and symbolic storytelling.",
+    "objective": "Create an interactive tarot reading application that combines AI with symbolic psychology.",
+    "skills": "React, Node.js, conversational logic, AI prompt management, and UX writing.",
+    "improvements": "Add keyboard navigation, alt text for all cards, and improve color contrast for accessibility compliance.",
+    "tech": ["React", "Node.js", "OpenAI API"],
+    "status": "In Progress",
+    "year": 2025,
+    "url": "https://github.com/Smy619/AI-Tarot"
+  },
+  {
+    "id": 8,
+    "title": "AI Email Assistant",
+    "category": "Concept",
+    "image": "/assets/img/portfolio/p4.webp",
+    "images": [
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp",
+      "/assets/img/portfolio/p5.webp"
+    ],
+    "description": "AI-based assistant that reads, summarizes, and writes emails automatically.",
+    "objective": "Design an intelligent assistant capable of reading, summarizing, and writing emails automatically using AI.",
+    "skills": "Python, IMAP/SMTP protocols, OpenAI API integration, and natural language processing.",
+    "improvements": "Develop a responsive web interface, improve accessibility, and allow tone customization in generated emails.",
+    "tech": ["Python", "OpenAI API", "IMAP/SMTP"],
+    "status": "Concept",
+    "year": 2025,
+    "url": "https://github.com/Smy619/AI-Email-Assistant"
+  }
+]

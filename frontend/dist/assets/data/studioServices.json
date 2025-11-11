@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "slug": "frontend",
+      "icon": "bi bi-code-slash",
+      "title": "React Front-End Development",
+      "description": "Building fast, scalable, and animated interfaces with React & SCSS.",
+      "className": "item-cyan",
+      "price": null
+    },
+    {
+      "id": 2,
+      "slug": "design",
+      "icon": "bi bi-layers",
+      "title": "UI Integration & Rebuilds",
+      "description": " Rebuilds Transforming existing designs (Figma -> Code) into responsive layouts.",
+      "className": "item-orange",
+      "price": null
+    },
+    {
+      "id": 3,
+      "slug": "wordpress",
+      "icon": "bi bi-wordpress",
+      "title": "WordPress Themes",
+      "description": "Modern WordPress sites with WooCommerce, animation, and SEO setup",
+      "className": "item-teal",
+      "price": null
+    },
+    {
+      "id": 4,
+      "slug":"automation",
+      "icon": "bi bi-lightning-charge",
+      "title": "AI Tools & Automation",
+      "description": "Integrating smart APIs to optimize workflows and save time.",
+      "className": "item-red",
+      "price": null
+    },
+    {
+      "id": 5,
+      "slug":"seo",
+      "icon": "bi bi-cloud-upload",
+      "title": "Deployment & Performance",
+      "description": "Hosting, CI/CD setup, SEO optimization, and maintenance",
+       "className": "item-indigo",
+      "price": null
+    },
+    {
+      "id": 6,
+      "slug":"consulting",
+      "icon": "bi bi-gear",
+      "title": "Website Optimization",
+      "description": "Refactoring and modernizing existing websites for better speed & UX.",
+      "className": "item-pink",
+      "price": null
+    }
+  ]
