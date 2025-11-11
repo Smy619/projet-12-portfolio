@@ -50,6 +50,11 @@
 /* ----------------------------
    Global Elements
 ---------------------------- */
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("/assets/bootstrap-icons.woff2") format("woff2");
+  font-display: swap;
+}
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -148,6 +153,25 @@ h6 {
   color: #fff;
 }
 
+.typed-cursor {
+  color: #272829 !important;
+  opacity: 1 !important;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.badge.bg-warning {
+  background-color: #856404 !important;
+  color: #fff !important;
+}
+
 /* =========================================================
    🧩 Layout Styles
    Author: Ting Sun
@@ -174,6 +198,17 @@ h6 {
 }
 .site-header.nav-show {
   left: 0;
+}
+.site-header .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ---------- Toggle Button ---------- */
@@ -1371,8 +1406,9 @@ section,
 ---------------------------- */
 #contact {
   position: relative;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
+  z-index: 9999;
+  pointer-events: auto;
+  background-color: transparent;
 }
 
 .contact,
