@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 🏠 Home -->
+  <url>
+    <loc>https://solenesun.com/</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 👩 About -->
+  <url>
+    <loc>https://solenesun.com/#about</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 💼 Projects Overview -->
+  <url>
+    <loc>https://solenesun.com/#projects</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🔹 Project Details -->
+  <url>
+    <loc>https://solenesun.com/portfolio-details/1</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solenesun.com/portfolio-details/2</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solenesun.com/portfolio-details/3</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+   <!-- 🧾 CV -->
+  <url>
+    <loc>https://solenesun.com/cv</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 📬 Contact -->
+  <url>
+    <loc>https://solenesun.com/#contact</loc>
+    <lastmod>2025-11-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
