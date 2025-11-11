@@ -9,6 +9,8 @@ import "../assets/styles/_hero.scss";
 
 function Hero() {
   const typedElement = useRef(null);
+ 
+
   const heroImg = "/assets/img/hero-bg.webp";
 
   const socialLinks = [
@@ -20,6 +22,7 @@ function Hero() {
 ];
 
   useEffect(() => {
+    // Initialize Typed.js
     const typed = new Typed(typedElement.current, {
       strings: ["Web Developer", "Front-end React", "Freelancer"],
       typeSpeed: 70,
@@ -27,6 +30,8 @@ function Hero() {
       backDelay: 2000,
       loop: true,
     });
+
+  
 
     AOS.init({
       duration: 1000, once: true
@@ -36,7 +41,8 @@ function Hero() {
      
   return (
     <section id="hero" className="hero" aria-label="Introduction section">
-       <img src={heroImg} alt="" data-aos="fade-in" loading="lazy" aria-hidden="true" />
+      <img src={heroImg} alt="" data-aos="fade-in" loading="lazy" aria-hidden="true" />
+      
 
        <div className="container" data-aos="fade-up" data-aos-delay="100">
           <h1 className="mb-2">TING SUN</h1>

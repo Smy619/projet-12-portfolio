@@ -63,6 +63,34 @@
         ]
       }
     </script>
+    <!-- ✅ Preload main CSS (non-blocking) -->
+    <link
+      rel="preload"
+      href="/assets/index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/assets/index.css" /></noscript>
+
+    <!-- ✅ Preload hero image (for LCP boost) -->
+    <link rel="preload" href="/assets/img/hero-bg.webp" as="image" />
+
+    <!-- ✅ Preload font and allow swap -->
+    <link
+      rel="preload"
+      href="/assets/bootstrap.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "Bootstrap Icons";
+        src: url("/assets/bootstrap.woff2") format("woff2");
+        font-display: swap;
+      }
+    </style>
+
   </head>
   <body>
     <div id="root"></div>
