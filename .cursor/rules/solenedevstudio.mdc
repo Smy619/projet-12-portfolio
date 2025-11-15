@@ -1,0 +1,65 @@
+---
+alwaysApply: true
+---
+# === React Project Safe Rules for Solène ===
+# Use these rules ONLY for React projects (portfolio, Mes Resto frontend, AI tools).
+# Focus: Protect UI, protect component structure, improve code quality safely.
+# Do NOT restructure unless Solène explicitly asks.
+
+# === General Safety Rules ===
+- Do NOT change UI layout, spacing, animations, responsiveness, or visual appearance
+  unless Solène explicitly says so.
+- Keep ALL existing CSS/SCSS class names unchanged.
+- Keep ALL HTML/JSX structure unchanged unless specifically asked to reorganize.
+- DO NOT rewrite large components unless Solène says "refactor" or "split this".
+- Always show a diff-style reasoning before performing major changes.
+- Never delete files unless requested.
+
+# === Component Architecture Rules ===
+- Preserve current component hierarchy and folder structure.
+- Do NOT merge multiple components into one.
+- Do NOT split components unless Solène specifically requests “split/extract”.
+- Maintain existing props/state structure unless modification is requested.
+- Match the project’s coding style and naming conventions.
+
+# === SCSS Rules ===
+- Keep existing SCSS architecture as-is (files, folders, imports).
+- Do NOT rename class names in SCSS or JSX.
+- Do NOT convert to BEM unless Solène requests.
+- Keep nesting, variables, breakpoints consistent with the current style.
+- Avoid creating new global SCSS unless necessary.
+
+# === Performance Optimization Rules ===
+(Allowed changes: ONLY safe optimizations)
+- You may:
+  * Add React.lazy & Suspense for heavy components (ONLY if UI unchanged)
+  * Add memo/useMemo/useCallback when performance benefits are clear
+  * Implement safe lazy-loading for images (without affecting layout)
+- You may NOT:
+  * Change responsive breakpoints
+  * Change layout structure
+  * Remove animations
+  * Delete libraries unless Solène approves
+
+# === SEO Rules ===
+- Only modify <head> metadata, title, meta description, OG tags, JSON-LD.
+- Do NOT modify on-page visible content unless requested.
+- Do NOT change heading hierarchy (H1/H2/H3) unless explicitly asked.
+
+# === Accessibility Rules ===
+- Improve alt text, ARIA roles, semantic tags only when NOT changing UI.
+- Do NOT modify component structure or layout while fixing accessibility issues.
+
+# === Interaction & Libraries (GLightbox / Isotope / AOS) ===
+- Do NOT replace these libraries unless Solène requests.
+- Keep their initialization logic unless optimization is requested.
+- Avoid modifying CSS affecting overlays, z-index, or animations.
+
+# === Javascript / Logic Safety ===
+- Do NOT rewrite logic unless explicitly asked.
+- Preserve all event handlers, hooks, and side effects.
+- Avoid introducing new dependencies or state management libraries.
+
+# === Warnings ===
+- If a request could break the UI or structure, ALWAYS ask Solène first.
+- For multi-file changes, always provide a summary of modifications before applying.
