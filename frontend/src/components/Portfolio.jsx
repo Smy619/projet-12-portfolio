@@ -17,7 +17,7 @@ function Projects() {
     const url = `https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/frontend/public/assets/data/portfolioData.json`;
 
     fetch(url)
-      .then((response) => {
+      .then((response) => { 
         if (!response.ok) throw new Error(`Network error: ${response.status}`);
         return response.json();
       })
